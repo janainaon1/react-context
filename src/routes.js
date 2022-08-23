@@ -1,28 +1,28 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import { UsuarioProvider } from 'common/context/Usuario';
-import Carrinho from 'pages/Carrinho';
-import Feira from 'pages/Feira';
-import Login from 'pages/Login'
+import { UsuarioProvider } from "common/context/Usuario";
+import Carrinho from "pages/Carrinho";
+import Feira from "pages/Feira";
+import Login from "pages/Login";
 
-function Router () {
+function Router() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/">
-          <UsuarioProvider>
+        <UsuarioProvider>
+          <Route exact path="/">
             <Login />
-          </UsuarioProvider>
-        </Route>
-        <Route path='/feira'>
-          <Feira />
-        </Route>
-        <Route path='/carrinho'>
+          </Route>
+          <Route path="/feira">
+            <Feira />
+          </Route>
+        </UsuarioProvider>
+        <Route path="/carrinho">
           <Carrinho />
         </Route>
       </Switch>
     </BrowserRouter>
-  )
+  );
 }
 
 export default Router;
