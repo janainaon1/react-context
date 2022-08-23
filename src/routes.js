@@ -5,6 +5,7 @@ import { CarrinhoProvider } from "common/context/Carrinho";
 import Carrinho from "pages/Carrinho";
 import Feira from "pages/Feira";
 import Login from "pages/Login";
+import { PagamentoProvider } from "common/context/Pagamento";
 
 function Router() {
   return (
@@ -18,9 +19,11 @@ function Router() {
             <Route path="/feira">
               <Feira />
             </Route>
-            <Route path="/carrinho">
-              <Carrinho />
-            </Route>
+            <PagamentoProvider>
+              <Route path="/carrinho">
+                <Carrinho />
+              </Route>
+            </PagamentoProvider>
           </CarrinhoProvider>
         </UsuarioProvider>
       </Switch>
